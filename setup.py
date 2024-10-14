@@ -2,6 +2,14 @@ from setuptools import setup, find_packages
 from typing import List
 
 
+def get_requirements()->List[str]:
+    """
+    This function returns the list of requirements from the requirements.txt file
+    """
+    with open("requirements.txt") as f:
+        requirements = f.readlines()
+    return requirements
+
 setup(
     name="Sensor",
     version="0.0.1",
@@ -18,9 +26,6 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",
-    install_requires=[
-        "pymongo==4.2.0"
-        # "pandas>=1.0.0",
-    ],
+    install_requires=get_requirements(),
 )
 

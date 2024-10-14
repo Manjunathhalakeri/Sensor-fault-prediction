@@ -1,2 +1,4 @@
 pymongo==4.2.0
 pandas>=1.0.0
+
+-e .  # This is used to install the project in editable mode.
