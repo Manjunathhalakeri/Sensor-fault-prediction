@@ -1,17 +1,13 @@
 import os
 import sys
 from Sensor.exception import SensorException
+from Sensor.logger import get_logger
 
-
-
-
-
-
-
-# ... rest of your code ...
+logger = get_logger(__name__)
 
 def test_exception():
     try:
+        logger.info("Starting the test_exception function")
         a=1/0
     except Exception as e:
         raise SensorException(e, sys)
